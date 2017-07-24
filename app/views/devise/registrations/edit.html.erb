@@ -4,13 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="form-group">
-    <%= f.label :username %>
-    <%= f.text_field :username, autofocus: true, class: "form-control" %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, autofocus: true,placeholder: "Your Name...", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :username %><br>
+    <%= f.text_field :username, placeholder: "Your Username...", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, placeholder: "Your Location...", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio, placeholder: "Bio...", class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, class: "form-control" %>
+    <%= f.email_field :email, placeholder: "Your Email...", class: "form-control" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,7 +34,7 @@
 
   <div class="form-group">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -34,6 +49,11 @@
   <div class="form-group">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <strong>Upload Profile Picture:</strong>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="actions">

@@ -4,9 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   has_many :blog_posts, dependent: :destroy
-   has_many :comments, dependent: :destroy
+    has_many :tweets, dependent: :destroy
+    serialize :following, Array
 
-   validates :username, uniqueness: true, presence: true
-   
+    validates :username, presence: true, uniqueness: true
+
+    mount_uploader :avatar, AvatarUploader
+
 end
