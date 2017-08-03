@@ -9,6 +9,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'bootstrap-sass'
 gem 'aws-sdk'
+gem 'fog'
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.4'
