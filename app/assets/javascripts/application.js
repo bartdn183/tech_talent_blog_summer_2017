@@ -27,3 +27,9 @@ $(document).ready(function() {
 		$(this).addClass('btn-primary');
 	});
 })
+
+
+
+$(document).on('turbolinks:load', function() {
+
+});
